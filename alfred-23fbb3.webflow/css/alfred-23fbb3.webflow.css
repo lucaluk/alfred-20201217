@@ -6077,7 +6077,7 @@ label.error {
 
 .text-field-7 {
   width: 80px;
-  height: 100%;
+  height: 60%;
   border-style: solid;
   border-width: 1px;
   border-color: transparent transparent #068dc9;
@@ -6727,6 +6727,8 @@ label.error {
   color: grey;
   font-weight: 700;
   text-decoration: none;
+  width: 50%;
+  padding: 0;
 }
 
 .sign-up-select-content-2 {
@@ -7848,6 +7850,13 @@ label.error {
   -webkit-transition: background-color 200ms ease-in;
   transition: background-color 200ms ease-in;
   font-size: 20px;
+}
+
+.signup-next{
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 2px;
 }
 
 .next-button:hover {
@@ -14690,7 +14699,7 @@ label.error {
 
   .sign-up-form-select-wrapper {
     max-height: none;
-    margin-top: auto;
+    margin-top: 20px;
     margin-bottom: 20px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -17538,7 +17547,7 @@ label.error {
   }
 
   .image-102 {
-    margin-right: -8px;
+    margin-right: 4px;
   }
 
   .image-104 {
