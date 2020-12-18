@@ -13131,8 +13131,8 @@ label.error {
     width: auto;
     max-width: 70vw;
     min-height: 200px;
-    margin-right: 20px;
-    margin-left: auto;
+    /* margin-right: 20px;
+    margin-left: auto; */
     padding-bottom: 20px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -14373,8 +14373,8 @@ label.error {
   }
 
   .half-width-div {
-    width: 100%;
-    margin-right: 0px;
+    /* width: 100%; */
+    margin: auto;
     padding-bottom: 0px;
     padding-left: 0px;
   }
@@ -14391,6 +14391,7 @@ label.error {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    padding-bottom: 50px;
   }
 
   .cta-photo-text-wrapper.reverse-on-mobile {
@@ -17251,7 +17252,7 @@ label.error {
   }
 
   .hover-border {
-    width: 80vw;
+    width: 100vw;
   }
 
   .nav-dropdown-list.click-collect {
