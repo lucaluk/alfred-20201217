@@ -34,10 +34,10 @@ input[type=number]::-webkit-outer-spin-button {
       	-webkit-appearance: none; 
       	margin: 0; 
     	}
-.w-select {
+/* .w-select {
     -webkit-appearance: none;
     -moz-appearance: none;
-}
+} */
 .sign-up-wrapper {
   
     padding: 15px;
@@ -69,6 +69,10 @@ input[type=number]::-webkit-outer-spin-button {
   .w-input.error{
     border: 1px solid red;
 }
+
+.div-block-6{
+    align-items: flex-start;
+  }
 
 </style>
 </head>
@@ -285,6 +289,11 @@ input[type=number]::-webkit-outer-spin-button {
  <script src="../js/jquery_validate_login.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+      $.validator.addMethod("pwcheck", function(value) {
+        return /[A-Z]/.test(value)
+          && /[a-z]/.test(value);
+      });
+
       $("#email-form").validate({
           rules: {
             first_name: { required:true },
@@ -292,7 +301,7 @@ input[type=number]::-webkit-outer-spin-button {
             email: { required: true, email:true, },
             mobile: { required: true, },
             store_name: { required: true, },
-            password: { required: true, minlength: 8 },
+            password: { required: true, minlength: 6, maxlength: 20, pwcheck: true },
            },
           messages: {
             first_name: {
@@ -313,7 +322,9 @@ input[type=number]::-webkit-outer-spin-button {
             },  
           password: {
             required: "This field is required.",
-            minlength: "Please enter at least 6 characters." 
+            minlength: "Please enter at least 6 characters.",
+            maxlength: "Please enter maximum 20 characters.",
+            pwcheck: "Format password invalid"
           },
           
         }, 
@@ -333,33 +344,43 @@ input[type=number]::-webkit-outer-spin-button {
         ;
       });
     });
+        $('.phone').focus(function(event) {
+    $('#country-code').css('border-color', '#068dc9');
+  });
+
+  $('#country-code').focus(function(event) {
+    $('.phone').css('border-color', '#068dc9');
+  });
+
+  $('.phone').focusout(function(event) {
+    $('#country-code').css('border-color', '');
+  });
+
+  $('#country-code').focusout(function(event) {
+    $('.phone').css('border-color', '');
+  });
 </script>
   <script>
-let d = document;
-let firstName = d.getElementById("first-name")
-let lastName = d.getElementById("last-name")
-let contactEmail = d.getElementById("contact-email")
-let mobile = d.getElementById("contact-mobile")
-let storeName=   d.getElementById("contact-store-name")
-let storeWebsite=   d.getElementById("contact-store-website")
-let storePassword = d.getElementById("contact-password")
+// let d = document;
+// let firstName = d.getElementById("first-name")
+// let lastName = d.getElementById("last-name")
+// let contactEmail = d.getElementById("contact-email")
+// let mobile = d.getElementById("contact-mobile")
+// let storeName=   d.getElementById("contact-store-name")
+// let storeWebsite=   d.getElementById("contact-store-website")
+// let storePassword = d.getElementById("contact-password")
 function formHandlerFunction() {
     // respond to the form submit event here
         console.log("button pressed")
-              localStorage.setItem('firstName', firstName.value);
-              localStorage.setItem('lastName', lastName.value);
-              localStorage.setItem('contactEmail', contactEmail.value); 
-              localStorage.setItem('mobile', mobile.value);
-              localStorage.setItem('storeName', storeName.value);
-              localStorage.setItem('storeWebsite', storeWebsite.value);
-              localStorage.setItem('storePassword', storePassword.value);
-              localStorage.setItem('firstName', firstName.value);
-              localStorage.setItem('lastName', lastName.value);
-              localStorage.setItem('contactEmail', contactEmail.value); 
-              localStorage.setItem('mobile', mobile.value);
-              localStorage.setItem('storeName', storeName.value);
-              localStorage.setItem('storeWebsite', storeWebsite.value);
-              localStorage.setItem('storePassword', storePassword.value);
+        localStorage.setItem('firstName', $('#First-name-2').val());
+    localStorage.setItem('lastName', $('#Last-name-2').val());
+    localStorage.setItem('contactEmail', $('#contact-email').val()); 
+    localStorage.setItem('mobile', $('#Mobile-2').val());
+    localStorage.setItem('storeName', $('#contact-store-name').val());
+    localStorage.setItem('storeWebsite', $('#contact-store-website').val());
+    localStorage.setItem('storePassword', $('#contact-password').val());
+
+              
 }
 var form = document.getElementById('email-form');
 form.addEventListener("submit", formHandlerFunction);

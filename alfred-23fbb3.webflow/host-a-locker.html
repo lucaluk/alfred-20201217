@@ -29,10 +29,10 @@ body {
     }
 </style>
   <style>
-.w-select {
+/* .w-select {
     -webkit-appearance: none;
     -moz-appearance: none;
-}
+} */
 </style>
 </head>
 <body class="body-4">
@@ -462,6 +462,22 @@ body {
 }
 </style>
   <script>
+          $('.phone').focus(function(event) {
+          $('#country-code').css('border-color', '#068dc9');
+        });
+
+        $('#country-code').focus(function(event) {
+          $('.phone').css('border-color', '#068dc9');
+        });
+
+        $('.phone').focusout(function(event) {
+          $('#country-code').css('border-color', '');
+        });
+
+        $('#country-code').focusout(function(event) {
+          $('.phone').css('border-color', '');
+        });
+
         let d = document
         let ans1 = "outdoor"
         let ans2 = "yes"

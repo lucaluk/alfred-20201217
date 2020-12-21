@@ -133,7 +133,7 @@ body {
     <div class="column w-col w-col-6 w-col-stack">
       <div class="w-container">
         <div class="w-form">
-          <form id="email-form" name="email-form" data-name="Email Form" redirect="/signup/signup-servicetype" data-redirect="/signup/signup-servicetype" class="sign-up-form">
+          <form id="email-form" name="email-form" data-name="Email Form" action="signup-servicetype-zh.html" data-redirect="/signup/signup-servicetype" class="sign-up-form">
             <div class="div-block-5">
               <div class="text-block-10">賬號資料</div>
             </div><label for="Email" class="field-label-2">請選擇您的帳號類別</label>
@@ -148,11 +148,11 @@ body {
                 <p class="sign-up-select-content hidden">One-line description: lorem ipsum dolor sit amet.</p><img src="../images/check-label.svg" loading="lazy" id="individual-account-tick" alt="" class="sign-up-form-selected-item p1">
               </div>
             </div>
-            <div id="busi-fields" class="business-account-fields w-clearfix"><label for="company-name" class="field-label-3">商業登記公司名稱</label><input type="text" class="text-input w-input" maxlength="256" name="company-name" data-name="Company Name" placeholder="請輸入商業登記公司名稱" id="company-name" required="">
+            <div id="busi-fields" class="business-account-fields w-clearfix"><label for="company-name" class="field-label-3">商業登記公司名稱</label><input type="text" class="text-input w-input" maxlength="256" name="company-name" data-name="Company Name" placeholder="請輸入商業登記公司名稱" id="company-name">
               <div class="section-6"><label for="First-name">商業登記號碼</label>
                 <div class="sign-up-form-info">?</div>
               </div>
-              <input type="text" class="text-input w-input" maxlength="256" name="business-registration-no" data-name="Business Registration No" placeholder="例子：1234567890" id="business-registration-no" required="">
+              <input type="text" class="text-input w-input" maxlength="256" name="business-registration-no" data-name="Business Registration No" placeholder="例子：1234567890" id="business-registration-no">
               
               <textarea  cols="30" rows="10" type="textarea" class="text-input address w-input" maxlength="256" name="registration-address" data-name="Registration Address" placeholder="您的商業登記地址" id="registration-address" required="" ></textarea>
 
@@ -162,9 +162,9 @@ body {
               </div>
               <div class="div-block-79">
                 <div class="html-embed-8 w-embed">
-                  <div id="slider2"></div>
+                  <div id="slider-business"></div>
                 </div>
-                <div class="div-block-80"><input type="text" maxlength="256" name="field" data-name="Field" id="lower-value" class="text-field-7 w-input"><input type="text" maxlength="256" name="field-2" data-name="Field 2" id="upper-value" class="text-field-7 w-input"></div>
+                <div class="div-block-80"><input type="text" maxlength="256" name="field" data-name="Field" id="lower-value-business" class="text-field-7 w-input" value="0.00"><input type="text" maxlength="256" name="field-2" data-name="Field 2" id="upper-value-business" class="text-field-7 w-input" value="50.00"></div>
               </div>
             </div>
             <div id="ind-fields" class="individual-account-fields w-clearfix">
@@ -174,15 +174,15 @@ body {
               </div>
               <div class="section-6"><label for="First-name">香港身份證號碼</label>
                 <div class="sign-up-form-info">?</div>
-              </div><input type="text" class="text-input w-input" maxlength="256" name="HKID-number" data-name="HKID number" placeholder="例子：A1234567(8)" id="HKID-number" required=""><label for="residential-address">住宅地址</label><input type="text" class="text-input w-input" maxlength="256" name="residential-address" data-name="residential address" placeholder="您的住宅地址" id="residential-address" required="">
+              </div><input type="text" class="text-input w-input" maxlength="256" name="HKID-number" data-name="HKID number" placeholder="例子：A1234567(8)" id="HKID-number"><label for="residential-address">住宅地址</label><input type="text" class="text-input w-input" maxlength="256" name="residential-address" data-name="residential address" placeholder="您的住宅地址" id="residential-address">
               <div class="section-6"><label for="First-name">預計每月寄貨量 </label>
                 <div class="optional">  <em>選填</em></div>
               </div>
               <div class="div-block-79">
                 <div class="html-embed-8 w-embed">
-                  <div id="slider"></div>
+                  <div id="slider-individual"></div>
                 </div>
-                <div class="div-block-80"><input type="text" maxlength="256" name="field" data-name="Field" id="lower-value-2" class="text-field-7 w-input"><input type="text" maxlength="256" name="field-2" data-name="Field 2" id="upper-value-2" class="text-field-7 w-input"></div>
+                <div class="div-block-80"><input type="text" maxlength="256" name="field" data-name="Field" id="lower-value-individual" class="text-field-7 w-input" value="0.00"><input type="text" maxlength="256" name="field-2" data-name="Field 2" id="upper-value-individual" class="text-field-7 w-input" value="50.00"></div>
               </div>
             </div>
 
@@ -280,30 +280,37 @@ body {
   <script src="../js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
   <script>
-    let lower = document.getElementById('lower-value')
-    let upper = document.getElementById('upper-value')
-    var slider = document.getElementById('slider');
+    let lowerBusiness = document.getElementById('lower-value-business')
+    let upperBusiness = document.getElementById('upper-value-business')
+    let lowerIndividual = document.getElementById('lower-value-individual')
+    let upperIndividual = document.getElementById('upper-value-individual')
+    var sliderBusiness = document.getElementById('slider-business');
+    var sliderIndividual = document.getElementById('slider-individual');
     //upper.value = "50.00"
-    noUiSlider.create(slider, {
+    noUiSlider.create(sliderBusiness, {
         start: [0, 50],
         connect: true,
         step:1,
         range: {
             'min': 0,
             'max': 100
-        }
+        },
+        tooltips: false,
+        behaviour: 'tap-drag',
     });
-     noUiSlider.create(slider2, {
+     noUiSlider.create(sliderIndividual, {
         start: [0, 50],
         connect: true,
         step:1,
         range: {
             'min': 0,
             'max': 100
-        }
+        },
+        tooltips: false,
+        behaviour: 'tap-drag',
     });
-    console.log(slider.noUiSlider.get());
-    function getValue(values, handle, unencoded, tap, positions, noUiSlider) {
+
+    function getValueBusiness(values, handle, unencoded, tap, positions, noUiSlider) {
         // values: Current slider values (array);
         // handle: Handle that caused the event (number);
         // unencoded: Slider values without formatting (array);
@@ -311,11 +318,23 @@ body {
         // positions: Left offset of the handles (array);
         // noUiSlider: slider public Api (noUiSlider);
         let arr = noUiSlider.get()
-        lower.value=arr[0]
-        upper.value=arr[1]
+        lowerBusiness.value=arr[0]
+        upperBusiness.value=arr[1]
     }
-    slider.noUiSlider.on("change", getValue);
-    </script>
+    function getValueIndividual(values, handle, unencoded, tap, positions, noUiSlider) {
+        // values: Current slider values (array);
+        // handle: Handle that caused the event (number);
+        // unencoded: Slider values without formatting (array);
+        // tap: Event was caused by the user tapping the slider (boolean);
+        // positions: Left offset of the handles (array);
+        // noUiSlider: slider public Api (noUiSlider);
+        let arr = noUiSlider.get()
+        lowerIndividual.value=arr[0]
+        upperIndividual.value=arr[1]
+    }
+    sliderBusiness.noUiSlider.on("change", getValueBusiness);
+    sliderIndividual.noUiSlider.on("change", getValueIndividual);
+  </script>
   <script>
     let d = document
     let accountType = "business"

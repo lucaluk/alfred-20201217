@@ -163,7 +163,7 @@ input[type="range"]::-webkit-slider-thumb:before {
     <div class="column w-col w-col-6 w-col-stack">
       <div class="column w-container">
         <div class="w-form">
-          <form id="email-form" name="email-form" data-name="Email Form" redirect="/signup/signup-success" data-redirect="/signup/signup-success" class="sign-up-form">
+          <form id="email-form" name="email-form" data-name="Email Form" action="signup-success.html" data-redirect="/signup/signup-success" class="sign-up-form">
             <div class="div-block-5">
               <div class="text-block-10">服務類型</div>
             </div><label for="First-name">您想如何寄出您的包裹？</label>
@@ -191,12 +191,11 @@ input[type="range"]::-webkit-slider-thumb:before {
               <textarea name="" id="" cols="30" rows="10" type="textarea" class="text-input address w-input" maxlength="256" name="Your-address-2" data-name="Your-address-2" placeholder="收件地址" id="Your-address-2" required="" ></textarea>
 
 
-              <div class="section-6"><label for="districts" class="field-label-4">您的收件地址屬於：</label><select id="districts" name="districts" data-name="Districts" class="select-field w-select">
-                  <option value="">地區</option>
-                </select></div>
-            </div>
 
-
+            <label class="w-checkbox">
+              <div class="w-checkbox-input w-checkbox-input--inputType-custom sign-up-checkbox"></div><input type="checkbox" id="same as registration address" name="same-as-registration-address" data-name="same as registration address" style="opacity:0;position:absolute;z-index:-1"><span for="same as registration address" class="checkbox-label w-form-label">Same as registration address</span>
+            </label>
+          </div>
 
             <div id="dropoff-fields" class="dropoff-fields">
               <div class="warehouse-address"><label for="districts-2" class="field-label-4">Alfred倉庫地址：</label><select id="districts-2" name="districts-2" data-name="Districts 2" class="warehouse-address-select-field w-select">
@@ -338,19 +337,19 @@ input[type="range"]::-webkit-slider-thumb:before {
     let dropoffFields = d.getElementById("dropoff-fields")
     let commercialAddress = d.getElementById("commercial-address")
     let residentialAddress = d.getElementById("residential-address")
-    let district = d.getElementById("districts")
-    axios.get('https://alfredhk-api.pakpobox.com/api/user/v1/getThirdLevelDistinct')
-          .then(response =>{
-             console.log(response)
-                for (i = 0; i <response.data.data.length; i++) {
-                    var option = document.createElement("option");
-                    option.text = response.data.data[i].enName;
-                    option.setAttribute("district",  response.data.data[i].districtId);
-                     district.add(option);
-                     console.log(response.data.data[i].enName)
-                }
-             //console.log(response.data.)
-     })
+    // let district = d.getElementById("districts")
+    // axios.get('https://alfredhk-api.pakpobox.com/api/user/v1/getThirdLevelDistinct')
+    //       .then(response =>{
+    //          console.log(response)
+    //             for (i = 0; i <response.data.data.length; i++) {
+    //                 var option = document.createElement("option");
+    //                 option.text = response.data.data[i].enName;
+    //                 option.setAttribute("district",  response.data.data[i].districtId);
+    //                  district.add(option);
+    //                  console.log(response.data.data[i].enName)
+    //             }
+    //          //console.log(response.data.)
+    //  })
     pickupService.addEventListener("click", pickupServiceClicked);
     dropOffService.addEventListener("click",dropOffServiceClicked);
     function pickupServiceClicked(){
@@ -391,15 +390,15 @@ input[type="range"]::-webkit-slider-thumb:before {
        residentialTick.style.display = "inherit";
         addressType = "RESIDENTIAL"
     }
-    let districtId 
-    district.onchange = function () {
-        //console.log(this.options[this.selectedIndex].getAttribute("districtId"));
-        districtId = this.options[this.selectedIndex].getAttribute("districtId")
-    };
+    // let districtId 
+    // district.onchange = function () {
+    //     //console.log(this.options[this.selectedIndex].getAttribute("districtId"));
+    //     districtId = this.options[this.selectedIndex].getAttribute("districtId")
+    // };
     function formHandlerFunction() {
         // respond to the form submit event here
-          let value = district.options[district.selectedIndex].value;
-          let districtValue = district.options[district.selectedIndex].text;
+          // let value = district.options[district.selectedIndex].value;
+          // let districtValue = district.options[district.selectedIndex].text;
           let companySignupApi = "https://alfredhk-api.pakpobox.com/api/user/v1/companySignUp"
          axios.post(companySignupApi,     {
              "firstName": localStorage.getItem('firstName'),
