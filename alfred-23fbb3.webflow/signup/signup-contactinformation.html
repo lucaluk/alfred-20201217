@@ -164,19 +164,30 @@ input[type=number]::-webkit-outer-spin-button {
     <div class="column w-col w-col-6 w-col-stack w-col-small-small-stack w-col-tiny-tiny-stack">
       <div class="container-2 w-container">
         <div class="w-form">
-          <form id="email-form" name="email-form" data-name="Email Form" method="get" redirect="/signup/signup-accountinformation" data-redirect="/signup/signup-accountinformation" class="sign-up-form w-clearfix">
+          <form id="email-form" name="email-form" data-name="Email Form" method="get" action="signup-accountinformation.html" data-redirect="/signup/signup-accountinformation" class="sign-up-form w-clearfix">
             <div class="div-block-5">
               <div class="text-block-10">Contact Information</div>
             </div>
             <div class="div-block-6">
-              <div class="div-block-46 w-clearfix"><label for="First-name-2" class="field-label-5">Your name</label><input type="text" class="text-input w-input" maxlength="256" name="first_name" data-name="First Name 2" placeholder="First name" id="First-name-2"></div>
-              <div class="div-block-60 w-clearfix"><input type="text" class="text-input w-input" maxlength="256" name="Last_name" data-name="Last Name 2" placeholder="Last name" id="Last-name-2"></div>
-            </div><label for="email" class="field-label-6">Contact email</label><input type="email" class="text-input w-input" maxlength="256" name="email" data-name="email" placeholder="Email" id="contact-email" required=""><label for="mobile" class="field-label-7">Mobile</label>
-
-            <div class="phone-wrapper"><select id="country-code" name="country-code" data-name="Country Code" class="select-field-2 w-select">
-              <option value="+852">+852</option>
-            </select><input type="tel" class="text-field phone w-input" maxlength="256" name="Mobile-2" data-name="Mobile 2" placeholder="Contact number" id="Mobile-2" ><label for="Mobile" class="form-field">Mobile</label></div><label for="store-name" class="field-label-8">Store name</label><input type="text" class="text-input w-input" maxlength="256" name="store-name" data-name="store name" placeholder="Store name" id="contact-store-name" required="">
-         
+              <div class="div-block-46 w-clearfix">
+                <label for="First-name-2" class="field-label-5">Your name</label>
+                <input type="text" class="text-input w-input" maxlength="256" name="first_name" data-name="First Name 2" placeholder="First name" id="First-name-2">
+              </div>
+              <div class="div-block-60 w-clearfix">
+                <input type="text" class="text-input w-input" maxlength="256" name="Last_name" data-name="Last Name 2" placeholder="Last name" id="Last-name-2">
+              </div>
+            </div>
+            <label for="email" class="field-label-6">Contact email</label><input type="email" class="text-input w-input" maxlength="256" name="email" data-name="email" placeholder="Email" id="contact-email" required=""><label for="mobile" class="field-label-7">Mobile</label>
+            <div class="phone-wrapper">
+              <select id="country-code" name="country-code" data-name="Country Code" class="select-field-2 w-select">
+                <option value="+852">+852</option>
+              </select>
+              <input type="tel" class="text-field phone w-input" maxlength="256" name="Mobile-2" data-name="Mobile 2" placeholder="Contact number" id="Mobile-2" >
+            
+            </div>
+            <label for="store-name" class="field-label-8">Store name</label>
+            <input type="text" class="text-input w-input" maxlength="256" name="store-name" data-name="store name" placeholder="Store name" id="contact-store-name" required="">
+                     
             <div class="section-6"><label for="First-name-2">Store website </label>
               <div class="optional">  optional</div>
               <div class="sign-up-form-info">  optional</div>
