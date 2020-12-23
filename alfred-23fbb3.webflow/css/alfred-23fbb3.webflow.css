@@ -12756,8 +12756,8 @@ label.error {
   .image-7 {
     /* padding-right: 60px;
     padding-left: 60px; */
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
   }
 
   .column {
@@ -16826,8 +16826,9 @@ label.error {
     top: 97px;
     margin-top: auto;
     margin-bottom: auto;
-    padding: 15px 6px 0px;
+    padding: 15px 6px 20px 6px;
     font-size: 13px;
+    line-height: 1;
   }
 
   .white-box-title {
