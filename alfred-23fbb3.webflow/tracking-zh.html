@@ -197,22 +197,22 @@ body {
                     <!-- OPENING TIMES, api is returning null for all 123/1234 orders -->
                     <div class="unit-name-paragraph">
                       <!-- days of week are hardcoded. API returns an object not array -->
-                      <span @click="input.opTimeOpen = !input.opTimeOpen" style="cursor: pointer;">Monday:
+                      <span @click="input.opTimeOpen = !input.opTimeOpen" style="cursor: pointer;">星期一：
                         {{ input.siteOpTime?.Monday[0].openTime }} – {{ input.siteOpTime?.Monday[0].closeTime }}</span>
     
                       <template v-if="input.opTimeOpen">
                         <br>
-                        <span>Tuesday: {{ input.siteOpTime?.Tuesday[0].openTime }} –
+                        <span>星期二： {{ input.siteOpTime?.Tuesday[0].openTime }} –
                           {{ input.siteOpTime?.Tuesday[0].closeTime }}</span> <br>
-                        <span>Wednesday: {{ input.siteOpTime?.Wednesday[0].openTime }} –
+                        <span>星期三： {{ input.siteOpTime?.Wednesday[0].openTime }} –
                           {{ input.siteOpTime?.Wednesday[0].closeTime }}</span> <br>
-                        <span>Thursday: {{ input.siteOpTime?.Thursday[0].openTime }} –
+                        <span>星期四： {{ input.siteOpTime?.Thursday[0].openTime }} –
                           {{ input.siteOpTime?.Thursday[0].closeTime }}</span> <br>
-                        <span>Friday: {{ input.siteOpTime?.Friday[0].openTime }} –
+                        <span>星期五： {{ input.siteOpTime?.Friday[0].openTime }} –
                           {{ input.siteOpTime?.Friday[0].closeTime }}</span> <br>
-                        <span>Saturday: {{ input.siteOpTime?.Saturday[0].openTime }} –
+                        <span>星期六： {{ input.siteOpTime?.Saturday[0].openTime }} –
                           {{ input.siteOpTime?.Saturday[0].closeTime }}</span> <br>
-                        <span>Sunday: {{ input.siteOpTime?.Sunday[0].openTime }} –
+                        <span>星期日： {{ input.siteOpTime?.Sunday[0].openTime }} –
                           {{ input.siteOpTime?.Sunday[0].closeTime }}</span>
                       </template>
                       <img @click="input.opTimeOpen = !input.opTimeOpen" src="images/Arrow-down.svg" loading="lazy"
@@ -634,11 +634,11 @@ body {
             clickexpand: function () {
               this.expandClicked = !this.expandClicked
               if (this.expandClicked === true) {
-                this.expandMessage = "Click to expand"
+                this.expandMessage = "點擊展開"
                 this.rotateIcon = true
               }
               else {
-                this.expandMessage = "Show less  "
+                this.expandMessage = "顯示更少  "
                 this.rotateIcon = false
               }
             },
