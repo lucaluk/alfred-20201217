@@ -141,7 +141,7 @@ body {
 }
 
 .cta-heading.cyan.center {
-  margin-bottom: 28px;
+  margin-bottom: 15px;
   margin-left: 0px;
   text-align: center;
 }
@@ -14715,6 +14715,7 @@ label.error {
   .cta-heading.center.cyan {
     padding-right: 30px;
     padding-left: 30px;
+    margin-bottom: 20px;
   }
 
   .sign-up-form-select-wrapper {
@@ -15709,8 +15710,8 @@ label.error {
 
   .body-text-big.location {
     margin-top: auto;
-    padding-right: 60px;
-    padding-left: 60px;
+    /* padding-right: 60px;
+    padding-left: 60px; */
     font-size: 17px;
   }
 
@@ -17529,7 +17530,7 @@ label.error {
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: 0px;
+    bottom: -3px;
     margin-bottom: -60px;
   }
 

@@ -30,12 +30,36 @@ body {
 </style>
   <style>
 .noUi-base{
-  background:rgba(6, 141, 201, 0.2);
+  background:#3898ec;
 }
+
 /*.noUi-target{
   height: 5px !important;
 }*/
 </style>
+<style>
+  /* .noUi-touch-area{
+    height: 50%;
+    width: 50%;
+  } */
+  .noUi-touch-area {
+      display: none;
+      height: 1%;
+      width: 100%;
+  }
+  .noUi-horizontal .noUi-handle {
+      width: 10px;
+      height: 5px;
+      right: -8px;
+      top: -3px;
+  }
+  .noUi-base{
+    background:rgba(6, 141, 201, 0.2);
+  }
+  /*.noUi-target{
+    height: 5px !important;
+  }*/
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.2/nouislider.css" integrity="sha512-30YMvFlZRwPH3TcDlPWZofkzGwIwDAKshEue1qWet2yWEQ4Y/X+WnV1aTuNldE3Hbpcl5Zz4PxoXJKMMQvBHGQ==" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.2/nouislider.min.js" integrity="sha512-hwgsSKm7cPjNHLACxyMGVRrd7cH+wveyYM1ZxWxxbCZd/pXdMukyuIrrCjt2I7iLsmYDk02B1ZUcarEv1A3RVQ==" crossorigin="anonymous"></script>
 </head>
@@ -164,7 +188,7 @@ body {
                 <div class="html-embed-8 w-embed">
                   <div id="slider-business"></div>
                 </div>
-                <div class="div-block-80"><input type="text" maxlength="256" name="field" data-name="Field" id="lower-value-business" class="text-field-7 w-input" value="0.00"><input type="text" maxlength="256" name="field-2" data-name="Field 2" id="upper-value-business" class="text-field-7 w-input" value="50.00"></div>
+                <div class="div-block-80"><input type="text" maxlength="256" name="field" data-name="Field" id="lower-value-business" class="text-field-7 w-input" value="0.00"><input type="text" maxlength="256" name="field-2" data-name="Field 2" id="upper-value-business" class="text-field-7 w-input" value="500.00"></div>
               </div>
             </div>
             <div id="ind-fields" class="individual-account-fields w-clearfix">
@@ -182,7 +206,7 @@ body {
                 <div class="html-embed-8 w-embed">
                   <div id="slider-individual"></div>
                 </div>
-                <div class="div-block-80"><input type="text" maxlength="256" name="field" data-name="Field" id="lower-value-individual" class="text-field-7 w-input" value="0.00"><input type="text" maxlength="256" name="field-2" data-name="Field 2" id="upper-value-individual" class="text-field-7 w-input" value="50.00"></div>
+                <div class="div-block-80"><input type="text" maxlength="256" name="field" data-name="Field" id="lower-value-individual" class="text-field-7 w-input" value="0.00"><input type="text" maxlength="256" name="field-2" data-name="Field 2" id="upper-value-individual" class="text-field-7 w-input" value="500.00"></div>
               </div>
             </div>
 
@@ -288,23 +312,23 @@ body {
     var sliderIndividual = document.getElementById('slider-individual');
     //upper.value = "50.00"
     noUiSlider.create(sliderBusiness, {
-        start: [0, 50],
+        start: [0, 500],
         connect: true,
         step:1,
         range: {
             'min': 0,
-            'max': 100
+            'max': 1000
         },
         tooltips: false,
         behaviour: 'tap-drag',
     });
      noUiSlider.create(sliderIndividual, {
-        start: [0, 50],
+        start: [0, 500],
         connect: true,
         step:1,
         range: {
             'min': 0,
-            'max': 100
+            'max': 1000
         },
         tooltips: false,
         behaviour: 'tap-drag',
