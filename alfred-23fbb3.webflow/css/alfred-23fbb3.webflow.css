@@ -4661,7 +4661,7 @@ input#Mobile-2 {
   width: auto;
   object-fit: contain;
 }
-}
+
 
 .cta-cards-section {
   display: block;
@@ -12267,7 +12267,7 @@ label.error {
     grid-row-gap: 2px;
     grid-template-areas: ".";
     grid-template-columns: repeat(auto-fit, minmax(100px, 0.25fr));
-    -ms-grid-rows: ;
+    /* -ms-grid-rows:; */
     grid-template-rows: repeat(auto-fit, 50px);
   }
 
