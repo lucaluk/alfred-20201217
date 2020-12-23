@@ -735,27 +735,22 @@ input#Mobile-2 {
   line-height: 24px;
 }
 
-/* .meta-list-icon {
-  margin-right: 15px;
-  margin-left: 15px;
+.meta-list-icon {
+  margin-right: 12px;
+  margin-left: 12px;
   background-image: url('../images/adress-icon.svg');
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
-} */
+}
 
 .meta-list-icon.adress {
-  width: 15px;
-  height: 15px;
-  margin-left: 0px;
-  background-image: url('../images/adress-icon.svg');
   
-  
-  /* width: 20px;
+  width: 20px;
   height: 18px;
   margin-left: 0px;
   background-image: url('../images/adress-icon.svg');
-  background-size: contain; */
+  background-size: contain;
 }
 
 .meta-list-icon.open-hours {
@@ -14831,8 +14826,9 @@ label.error {
   }
 
   .meta-list-icon.adress {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
+    background-size: contain;
   }
 
   .meta-list-icon.open-hours {
