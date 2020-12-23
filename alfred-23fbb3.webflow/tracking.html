@@ -185,7 +185,7 @@
               <div class="meta-list-item">
                 <div class="meta-list-icon adress"></div>
                 <div class="unit-name-paragraph">{{input.streetAddressEn}}</div>
-                <a href="#" class="how-to-get-there-link">How to get there</a>
+                <a :href="'https://www.google.com/maps?saddr=My+Location&daddr='+ input.latitude + ',' + input.longitude" class="how-to-get-there-link">How to get there</a>
                 <img src="images/right-arrow-bold.svg" alt="" class="how-to-get-there-arrow">
 
                 <!-- <img src="images/right-arrow-bold.svg" alt="" style="width: 16px;"> -->
@@ -239,7 +239,8 @@
                   <div class="status-title-name" :style="`color: ${ parseTrackCode(tracking.trackEvent.trackCode) === 'Delivered' ? '#068dc9' : '#222f5a' };`">{{ parseTrackCode(tracking.trackEvent.trackCode) }}</div>
                 </div>
                 <!-- make the dots actually align -->
-                <div class="indicator-1" :style="`${tracking.firstValue ? ' height: 50%; margin-top: 5%;' : '' }; ${tracking.lastValue ? 'height: 50%; margin-bottom: 5%;' : '' };`">
+                 <!-- :style="`${tracking.firstValue ? ' height: 50%; margin-top: 5%;' : '' }; ${tracking.lastValue ? 'height: 50%; margin-bottom: 5%;' : '' };`" -->
+                 <div class="indicator-1">
                   <!-- it's hacky but overrides webflow styling -->
                   <div :style="`background-color: ${ parseTrackCode(tracking.trackEvent.trackCode) === 'Delivered' ? '#068dc9' : '#222f5a' };`" v-bind:class="{delivered: parseTrackCode(tracking.trackEvent.trackCode) === 'Delivered', orderplaced: parseTrackCode(tracking.trackEvent.trackCode) === 'Order placed' }" class="line">
                   </div>
@@ -527,6 +528,11 @@
     .box-number-box #text-input-field {
       padding-left: 26px;
     }
+    .track-button-text-wrapper{
+          position: relative;
+          /* height: 160px; */
+          align-items: center;
+        }
 
     .box-number-box #text-input-field,
     .box-number-box #text-input-field::placeholder {
@@ -606,7 +612,9 @@
             showList: true,
             siteOpTime: '',  //////// added on all inputs
             opTimeOpen: false,
-            trackingInfo: []
+            trackingInfo: [],
+            latitude: '',
+            longitude: ''
           }
         ],
         rotateIcon: true,
@@ -749,6 +757,7 @@
                     this.app.showLessText = !this.app.showLessText
                   }
                 }
+                $('.track-button-text-wrapper').css('height', '');
               })
               .catch(function (error) {
                 this.errorMessage = true

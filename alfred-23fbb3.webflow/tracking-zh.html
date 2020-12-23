@@ -130,7 +130,7 @@ body {
           <div class="box-number-box" :class="{ 'is--wide': firstLoad }" >
             
             <div class="text-block-32">追蹤號碼</div>
-            <p class="how-to-track-paragraph">每次可追蹤最多10個運單。請用逗號（，）或換行符（ter）分隔開</p>
+            <p class="how-to-track-paragraph">每次可追蹤最多10個運單。請用逗號（，）或換行符（Enter）分隔開</p>
             <div class="form-block-3 w-form">
               <form id="wf-form-tracking-number-form" name="wf-form-tracking-number-form" data-name="tracking number form"
                 class="form-6">
@@ -186,7 +186,7 @@ body {
                     <div class="unit-name-paragraph">{{input.streetAddress}}</div>
                     <a :href="'https://www.google.com/maps?saddr=My+Location&daddr='+ input.latitude + ',' + input.longitude" class="how-to-get-there-link">如何前往</a>
     
-                    <img src="images/right-arrow-bold.svg" alt="" style="width: 16px;">
+                    <img src="images/right-arrow-bold.svg" class="how-to-get-there-arrow" alt="" style="width: 16px;">
     
                     
                  
@@ -239,7 +239,7 @@ body {
                     <!-- make the dots actually align -->
                     <div class="indicator-1">
                       <!-- it's hacky but overrides webflow styling -->
-                      <div :style="`background-color: ${ parseTrackCode(tracking.trackEvent.trackCode) === 'Delivered' ? '#068dc9' : '#222f5a' }; ${tracking.lastValue ? 'position: absolute;top: 0;height: 50%' : '' }; ${tracking.firstValue ? 'position: absolute;bottom: 0;height: 50%' : '' };`" v-bind:class="{delivered: parseTrackCode(tracking.trackEvent.trackCode) === 'Delivered', orderplaced: parseTrackCode(tracking.trackEvent.trackCode) === 'Order placed' }" class="line">
+                  <div :style="`background-color: ${ parseTrackCode(tracking.trackEvent.trackCode) === 'Delivered' ? '#068dc9' : '#222f5a' };`" v-bind:class="{delivered: parseTrackCode(tracking.trackEvent.trackCode) === 'Delivered', orderplaced: parseTrackCode(tracking.trackEvent.trackCode) === 'Order placed' }" class="line">
                       </div>
                       <!-- position circle in middle correctly -->
                       <div :style="`background-color: ${ parseTrackCode(tracking.trackEvent.trackCode) === 'Delivered' ? '#068dc9' : '#222f5a' }; ${tracking.firstValue ? 'position: absolute;bottom: 50%' : '' };`" v-bind:class="{delivered: parseTrackCode(tracking.trackEvent.trackCode) === 'Delivered'}" class="circle"></div>

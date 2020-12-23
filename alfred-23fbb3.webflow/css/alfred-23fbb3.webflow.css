@@ -3562,7 +3562,7 @@ input#Mobile-2 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 40vw;
+  width: 50%;
   margin-left: 0px;
   padding-right: 0px;
   -webkit-box-orient: vertical;
@@ -4723,6 +4723,7 @@ input#Mobile-2 {
 
 .hero-bodytext.chin {
   line-height: 28px;
+  max-width: none;
 }
 
 .how-it-works-link-text-2 {
@@ -12708,6 +12709,12 @@ label.error {
 }
 
 @media screen and (max-width: 767px) {
+  
+  .hero-heading.small.chin {
+    width: auto;
+    line-height: 50px;
+  }
+  
   .cta-heading {
     font-size: 35px;
     line-height: 40px;
@@ -14655,7 +14662,7 @@ label.error {
     width: 16px;   
     align-self: start;
     margin-top: 4px;
-    margin-right: auto;
+    margin-right: 8px;
     margin-left: 8px;
   }
   
