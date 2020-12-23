@@ -12753,10 +12753,12 @@ label.error {
     font-size: 35px;
   }
 
-  /* .image-7 {
+  .image-7 {
     padding-right: 60px;
     padding-left: 60px;
-  } */
+    height: 100%;
+    width: 100%;
+  }
 
   .column {
     display: block;
@@ -15299,6 +15301,7 @@ label.error {
 
   .pickuplocationssection {
     min-height: 100vw;
+    height: auto;
     padding: 5vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
