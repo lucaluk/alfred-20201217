@@ -11,7 +11,7 @@
             :class="{ 'dropdown__btn--active': isOpenType, 'light-blue-dropdown': changedDropdownType}"
             @click="isOpenType = !isOpenType"
           >
-            {{ typeSelected ? typeSelected.name : "Types" }}
+            {{ typeSelected ? typeSelected.name : "Type" }}
             <svg class="dropdown__icon" v-if="!isOpenType">
               <use
                 xlink:href="@/assets/images/sprite.svg#icon-chevron-down"

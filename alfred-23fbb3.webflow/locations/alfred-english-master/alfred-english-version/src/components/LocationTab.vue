@@ -142,7 +142,7 @@
             Laundry
           </span>
         </span>
-        <!-- <button class="location-tab__actions-btn">Get directions</button> -->
+        <button class="location-tab__actions-btn">Get directions <img src="@/assets/icons/next-black.png" height="15px" /></button>
       </div>
     </div>
 </template>

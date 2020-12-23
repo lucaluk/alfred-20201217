@@ -120,6 +120,7 @@ body {
   border-radius: 1.5rem;
   padding: 1rem;
   background: linear-gradient(to top, #afafaf 1px, transparent 1px) 0 100%;
+  padding-bottom: 2.2rem;
 }
 
 .location-tab:hover {
@@ -142,7 +143,7 @@ body {
 }
 
 .location-tab__code-text {
-  font-size: 30px;
+  font-size: 20px;
   line-height: 38px;
   margin-right: 2rem;
   color: #222f5a;
@@ -169,7 +170,7 @@ body {
 .location-tab__heading {
   color: #222f5a;
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   line-height: 38px;
   letter-spacing: -0.6px;
@@ -180,6 +181,7 @@ body {
   line-height: 18px;
   letter-spacing: -0.6px;
   color: #808080;
+  padding-bottom: 0.5rem;
 }
 
 .location-tab__duration {
@@ -219,6 +221,10 @@ body {
   color: var(--color-grey-light);
   cursor: pointer;
   padding: 0.25rem;
+  margin-right: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
 
 .icon-group{
@@ -238,6 +244,7 @@ body {
   letter-spacing: -0.2px;
   color: #068dc9;
   visibility: hidden;
+  text-align: center;
 }
 .icon-group:hover span{
   visibility: visible !important;
@@ -357,6 +364,7 @@ body {
   width: 18rem;
   margin-left: -35px;
 }
+
 .dropdown__content::after{
   content: '';
   display: block;
@@ -447,22 +455,22 @@ body {
 
 @media only screen and (min-width: 768px) {
   .map {
-    width: 65%;
+    width: 60%;
     float: right;
   }
 
   .list-location {
-    width: 35%;
+    width: 40%;
     float: left;
     overflow-y: auto;
     height: 1000px;
-    padding: 2.5rem;
+    padding: 2rem;
   }
 }
 
 @media screen and (max-width: 767px) {
   body {
-    margin-right: 20px;
+    margin-right: 20px;800
     margin-left: 20px;
   }
   .map {
@@ -477,14 +485,7 @@ body {
   }
 }
 
-@media screen and (max-width: 414px) {
-  body {
-    margin-right: 0px;
-    margin-left: 0px;
-  }
-}
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1110px) {
   body {
     margin-right: 0px;
     margin-left: 0px;
@@ -496,5 +497,13 @@ body {
 
   .tracking-bar__search-btn {
     width: auto;
+  }
+
+  .dropdown__content {
+    margin-left: 0px;
+  }
+
+  .dropdown__content::after{
+    left: 42%;
   }
 }
