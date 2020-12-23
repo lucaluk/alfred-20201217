@@ -15291,7 +15291,7 @@ label.error {
   }
 
   .pickuplocationssection {
-    height: 100vw;
+    min-height: 100vw;
     padding: 5vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -15326,6 +15326,7 @@ label.error {
     margin-bottom: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
+    height: 50px;
   }
 
   .div-block-12 {

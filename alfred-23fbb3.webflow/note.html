@@ -1,0 +1,41 @@
+var app = new Vue({
+    el: '.tracking-section',
+    data: {
+        inputs: [
+           { 
+             orderNumber: '',
+             siteNameEn:'',
+             streetAddressEn:'',
+             orderStatus:'',
+             showList:true,
+             siteOpTime: '',
+             trackingInfo:[]
+           }
+        ],
+        rotateIcon:true,
+        showLessText: false,
+        hideThis: false,
+        shipmentNotFound: false,
+        expandClicked:true, 
+        noShipmentFound:false,
+        shipmentFound:false,
+        firstLoad: true,
+        errorMessage:false,
+        showTrackDivs: false,
+        expandMessage:"點擊展開",
+        trackingNumber: "",
+        url: 'https://alfredhk.pakpobox.com/api/orders/v1/tracking/findTrackingInfoByOrderNumberOrExpressNumber'
+    },
+    methods: {
+      clickexpand:function(){
+        console.log("inside click expand")
+         this.expandClicked = !this.expandClicked
+         if(this.expandClicked === true){
+           this.expandMessage = "點擊展開"
+           this.rotateIcon = true
+         }
+         else{
+           this.expandMessage = "顯示更少"
+            this.rotateIcon = false
+         }
+      },
