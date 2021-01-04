@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com  -->
 <!--  Last Published: Thu Dec 03 2020 00:07:08 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="5f719d977044f814d429aaa9" data-wf-site="5f0e7384784a2c612e5ffbe8">
+<html data-wf-page="5f6a4ff8cd7be1eebce30b48" data-wf-site="5f0e7384784a2c612e5ffbe8">
 
 <head>
     <meta charset="utf-8">
     <title>Alfred智能櫃 – We Deliver, You Collect.</title>
-    <meta content="signup-serviceType-zh" property="og:title">
-    <meta content="signup-serviceType-zh" property="twitter:title">
+    <meta content="signup-serviceType" property="og:title">
+    <meta content="signup-serviceType" property="twitter:title">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="Webflow" name="generator">
     <meta name="format-detection" content="telephone=no">
@@ -91,62 +91,60 @@
 
 <body>
 
-
-
     <div class="chatbot-button div-block-81">
         <a href="https://api.whatsapp.com/send?phone=85251777091" target="_blank" class="link-block-8 w-inline-block"></a>
     </div>
+
     <div class="sign-up-wrapper w-row">
         <div class="column w-col w-col-6 w-col-stack">
             <div class="column w-container">
                 <div class="w-form">
-                    <form id="email-form" name="email-form" data-name="Email Form" action="javascript:redirect()" data-redirect="/signup/signup-success" class="sign-up-form">
+                    <!--<form id="email-form" name="email-form" data-name="Email Form" action="signup-success.html" data-redirect="/signup/signup-success" class="sign-up-form">-->
+                    <form id="email-form" name="email-form" data-name="Email Form" action="javascript:formHandlerFunction()" data-redirect="/signup/signup-success" class="sign-up-form">
                         <div class="div-block-5">
-                            <div class="text-block-10">服務類型</div>
-                        </div><label for="First-name">您想如何寄出您的包裹？</label>
+                            <div class="text-block-10">Service Type</div>
+                        </div><label for="First-name" class="field-label-11">How shall we collect your parcels?</label>
                         <div class="sign-up-form-select-wrapper">
                             <div id="pickup-service" class="sign-up-select-item">
-                                <h1 class="sign-up-select-title">上門收件</h1>
-                                <p class="sign-up-select-content-2">$20/單</p><img src="../images/check-label.svg" loading="lazy" id="pickup-tick" alt="" class="sign-up-form-selected-item p1">
+                                <h1 class="sign-up-select-title">Pick up from your address</h1>
+                                <p class="sign-up-select-content-2">$25/parcel (max. 5kg)</p><img src="../images/check-label.svg" loading="lazy" id="pickup-tick" alt="" class="sign-up-form-selected-item p1">
                             </div>
                             <div class="_20px-gap"></div>
                             <div id="dropoff-service" class="sign-up-select-item">
-                                <h1 class="sign-up-select-title">自行送倉</h1>
-                                <p class="sign-up-select-content-2">$15/單</p><img src="../images/check-label.svg" loading="lazy" id="dropoff-tick" alt="" class="sign-up-form-selected-item p1">
+                                <h1 class="sign-up-select-title">Drop off at our warehouse</h1>
+                                <p class="sign-up-select-content-2">$20/parcel</p><img src="../images/check-label.svg" loading="lazy" id="dropoff-tick" alt="" class="sign-up-form-selected-item p1">
                             </div>
                         </div>
-                        <div id="pickup-fields" class="pickup-fields"><label for="First-name">您的收件地址是：</label>
+                        <div id="pickup-fields" class="pickup-fields"><label for="First-name" class="field-label-12">Your pick up address is a:</label>
                             <div class="sign-up-form-select-wrapper">
                                 <div id="commercial-address" class="sign-up-select-item">
-                                    <h1 class="sign-up-select-title">工商地址</h1><img src="../images/check-label.svg" loading="lazy" id="commercial-tick" alt="" class="sign-up-form-selected-item p1">
+                                    <h1 class="sign-up-select-title">Commercial address</h1><img src="../images/check-label.svg" loading="lazy" id="commercial-tick" alt="" class="sign-up-form-selected-item p1">
                                 </div>
                                 <div class="_20px-gap"></div>
                                 <div id="residential-address" class="sign-up-select-item">
-                                    <h1 class="sign-up-select-title">住宅地址</h1><img src="../images/check-label.svg" loading="lazy" id="residential-tick" alt="" class="sign-up-form-selected-item p1">
+                                    <h1 class="sign-up-select-title">Residential address</h1><img src="../images/check-label.svg" loading="lazy" id="residential-tick" alt="" class="sign-up-form-selected-item p1">
                                 </div>
                             </div>
-                            <textarea name="" cols="30" rows="10" type="textarea" class="text-input address w-input" maxlength="256" name="Your-address-2" data-name="Your-address-2" placeholder="收件地址" id="Your-address-2" required></textarea>
 
+                            <textarea name="" cols="30" rows="10" class="text-input address w-input" maxlength="256" name="Your-address-2" data-name="Your-address-2" placeholder="Pick up address" id="Your-address-2" required></textarea>
 
 
                             <label class="w-checkbox">
-              <div class="w-checkbox-input w-checkbox-input--inputType-custom sign-up-checkbox"></div><input type="checkbox" id="same as registration address" name="same-as-registration-address" data-name="same as registration address" style="opacity:0;position:absolute;z-index:-1"><span for="same as registration address" class="checkbox-label w-form-label">Same as registration address</span>
-            </label>
+                <div class="w-checkbox-input w-checkbox-input--inputType-custom sign-up-checkbox"></div><input type="checkbox" id="same as registration address" name="same-as-registration-address" data-name="same as registration address" style="opacity:0;position:absolute;z-index:-1"><span for="same as registration address" class="checkbox-label w-form-label">Same as registration address</span>
+              </label>
                         </div>
 
                         <div id="dropoff-fields" class="dropoff-fields">
-                            <div class="warehouse-address"><label for="districts-2" class="field-label-4">Alfred倉庫地址：</label><select id="districts-2" name="districts-2" data-name="Districts 2" class="warehouse-address-select-field w-select">
-                  <option value="167 Hoi Bun Road, Kung Tong">長沙灣發祥街1號</option>
-                  <option value="3 Hung Cheung Road, Tun Mun">屯門洪祥路3號</option>
+                            <div class="warehouse-address"><label for="districts-2" class="field-label-4">Our warehouse address is:</label><select id="districts-2" name="districts-2" data-name="Districts 2" class="warehouse-address-select-field w-select">
+                  <option value="167 Hoi Bun Road, Kung Tong">167 Hoi Bun Road, Kung Tong</option>
+                  <option value="3 Hung Cheung Road, Tun Mun">3 Hung Cheung Road, Tun Mun</option>
                 </select></div>
 
 
-
-
                         </div><label class="w-checkbox">
-              <div class="w-checkbox-input w-checkbox-input--inputType-custom sign-up-checkbox"></div><input type="checkbox" id="checkbox" name="checkbox" data-name="Checkbox" style="opacity:0;position:absolute;z-index:-1"><span class="checkbox-label w-form-label">我明白和同意Alfred的服務費用</span>
+              <div class="w-checkbox-input w-checkbox-input--inputType-custom sign-up-checkbox"></div><input type="checkbox" id="checkbox" name="checkbox" data-name="Checkbox" style="opacity:0;position:absolute;z-index:-1"><span class="checkbox-label w-form-label">I understand and agree to Alfred service fee</span>
             </label><label class="w-checkbox">
-              <div class="w-checkbox-input w-checkbox-input--inputType-custom sign-up-checkbox"></div><input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2" style="opacity:0;position:absolute;z-index:-1"><span class="checkbox-label-2 w-form-label">我同意Alfred的使用條款</span>
+              <div class="w-checkbox-input w-checkbox-input--inputType-custom sign-up-checkbox"></div><input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2" style="opacity:0;position:absolute;z-index:-1"><span class="checkbox-label-2 w-form-label">I agree to Alfred terms and conditions</span>
             </label>
                         <div>
                             <div class="html-embed-9 w-embed"><input type="range" class="slideToUnlock" value="0" max="100"></div>
@@ -154,14 +152,13 @@
 
 
 
+
                         <div class="sign-up-form-select-wrapper">
                             <a href="signup-accountinformation.html">
-                                <div><img src="../images/black-arrow.png" loading="lazy" width="20" alt="" class="image-102"><input value="上一步" data-wait="Please wait..." class="previous w-button"></div>
+                                <div><img src="../images/black-arrow.png" loading="lazy" width="20" alt="" class="image-102"><input value="Previous" data-wait="Please wait..." class="previous w-button"></div>
                             </a>
-                            <div><input type="submit" value="提交" data-wait="Please wait..." class="submit-button signup-next"><img src="../images/black-arrow.png" loading="lazy" width="20" alt=""></div>
+                            <div><input type="submit" value="Submit" data-wait="Please wait..." class="submit-button signup-next"><img src="../images/black-arrow.png" loading="lazy" width="20" alt=""></div>
                         </div>
-
-
 
                     </form>
                     <div class="w-form-done">
@@ -174,10 +171,10 @@
             </div>
         </div>
         <div class="sign-up-content w-col w-col-6 w-col-stack">
-            <h1 class="cta-heading">登記使用</h1>
-            <p class="paragraph">迎接派送的未來。立即登記使用更好，更無縫和更智能的自提網絡。</p>
-            <p class="paragraph-2">已有帳戶? 立即按<a href="https://alfredhk.pakpobox.com/" class="black-link">這裡</a>登入。</p><img src="../images/banner-image-3.png" srcset="../images/banner-image-3-p-500.png 500w, ../images/banner-image-3.png 554w" sizes="(max-width: 479px) 90vw, (max-width: 767px) 554px, (max-width: 814px) 68vw, (max-width: 991px) 554px, (max-width: 1919px) 37vw, 554px"
-                alt="" class="image-7">
+            <h1 class="cta-heading">Sign Up</h1>
+            <p class="paragraph">Join the future of delivery. Sign up to a better, seamless, and smart delivery network. </p>
+            <p class="paragraph-2">Already have an account? Click <a href="https://alfredhk.pakpobox.com/" class="black-link">here</a> to <a href="#" class="black-link">login</a> now.</p><img src="../images/banner-image-3.png" sizes="(max-width: 479px) 100vw, (max-width: 767px) 90vw, (max-width: 991px) 634px, (max-width: 1439px) 45vw, (max-width: 1919px) 634px, 614px"
+                srcset="../images/banner-image-3-p-500.png 500w, ../images/banner-image-3.png 554w" alt="" class="image-7">
         </div>
     </div>
 
@@ -282,17 +279,12 @@
              districtId = this.options[this.selectedIndex].getAttribute("districtId")
         };*/
 
+        // Self calling function for previous signup information completed chcek
         (function() {
             if (sessionStorage.getItem("complete_signup_info_page") == null || sessionStorage.getItem("complete_signup_info_page") < 2) {
-                window.location.href = "/signup/signup-contactinformation-zh.html";
+                window.location.href = "/signup/signup-contactinformation.html";
             }
         })();
-
-        function redirect() {
-            sessionStorage.setItem("complete_signup_info_page", 0);
-            window.location.href = "/signup/signup-success-zh.html";
-            return false;
-        }
 
         function formHandlerFunction() {
             // respond to the form submit event here
@@ -333,10 +325,12 @@
                     //handle success
                     console.log(response);
                     //debugger;
-                    form.submit();
+                    sessionStorage.setItem("complete_signup_info_page", 0);
+                    window.location.href = "/signup/signup-success.html";
                 })
                 .catch(function(response) {
                     //handle error
+                    alert("Signup Fail");
                     console.log(response);
                 });
 
