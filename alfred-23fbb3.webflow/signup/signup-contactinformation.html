@@ -42,6 +42,7 @@
         body {
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-smoothing: antialiased;
+            min-height: auto !important;
         }
     </style>
     <style>
@@ -108,7 +109,7 @@
         <div class="column w-col w-col-6 w-col-stack w-col-small-small-stack w-col-tiny-tiny-stack">
             <div class="container-2 w-container">
                 <div class="w-form">
-                    <form id="email-form" name="email-form" data-name="Email Form" method="" action="javascript:redirect()" data-redirect="/signup/signup-accountinformation" class="sign-up-form w-clearfix">
+                    <form id="email-form" name="email-form" data-name="Email Form" method="" action="javascript:redirect()" data-redirect="/signup-contactinformation.html" class="sign-up-form w-clearfix">
                         <div class="div-block-5">
                             <div class="text-block-10">Contact Information</div>
                         </div>
@@ -190,7 +191,7 @@
     <script type="text/javascript">
         function redirect() {
             sessionStorage.setItem("complete_signup_info_page", 1);
-            window.location.href = "/signup/signup-accountinformation.html";
+            window.location.href = "./signup-accountinformation.html";
             return false;
         }
 
