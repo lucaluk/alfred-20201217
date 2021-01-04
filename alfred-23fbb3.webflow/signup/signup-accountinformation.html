@@ -42,6 +42,7 @@
         body {
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-smoothing: antialiased;
+            min-height: auto !important;
         }
     </style>
     <style>
@@ -214,13 +215,13 @@
         // Self calling function for previous signup information completed chcek
         (function() {
             if (sessionStorage.getItem("complete_signup_info_page") == null || sessionStorage.getItem("complete_signup_info_page") < 1) {
-                window.location.href = "/signup/signup-contactinformation.html";
+                window.location.href = "./signup-contactinformation.html";
             }
         })();
 
         function redirect() {
             sessionStorage.setItem("complete_signup_info_page", 2);
-            window.location.href = "/signup/signup-servicetype.html";
+            window.location.href = "./signup-servicetype.html";
             return false;
         }
 
