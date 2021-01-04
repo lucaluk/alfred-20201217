@@ -42,6 +42,7 @@
         body {
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-smoothing: antialiased;
+            min-height: auto !important;
         }
     </style>
     <style>
@@ -272,14 +273,14 @@
     <script>
         (function() {
             if (sessionStorage.getItem("complete_signup_info_page ") == null || sessionStorage.getItem("complete_signup_info_page ") < 1) {
-                window.location.href = "/signup/signup-contactinformation-zh.html ";
+                window.location.href = "./signup-contactinformation-zh.html ";
             }
         })();
 
         function redirect() {
             sessionStorage.setItem("complete_signup_info_page ", 2);
             debugger;
-            window.location.href = "/signup/signup-servicetype-zh.html ";
+            window.location.href = "./signup-servicetype-zh.html ";
             return false;
         }
 
