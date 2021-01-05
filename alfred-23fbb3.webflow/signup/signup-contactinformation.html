@@ -81,7 +81,8 @@
         }
         
         .phone-wrapper {
-            margin-bottom: 18px;
+            margin-bottom: 12px;
+            align-items: flex-start;
         }
         
         .error {
@@ -90,6 +91,14 @@
         
         .w-input.error {
             border: 1px solid red;
+        }
+        
+        .w-select.error {
+            border: 1px solid red;
+        }
+        
+        #Mobile-2-error {
+            margin-bottom: 8px;
         }
         
         .div-block-6 {
@@ -124,13 +133,21 @@
                         </div>
                         <label for="email" class="field-label-6">Contact email</label><input type="email" class="text-input w-input" maxlength="256" name="email" data-name="email" placeholder="Email" id="contact-email" required=""><label for="mobile"
                             class="field-label-7">Mobile</label>
+
+
                         <div class="phone-wrapper">
-                            <select id="country-code" name="country-code" data-name="Country Code" class="select-field-2 w-select">
-                <option value="+852">+852</option>
-              </select>
-                            <input type="tel" class="text-field phone w-input" maxlength="256" name="Mobile-2" data-name="Mobile 2" placeholder="Contact number" id="Mobile-2">
+                            <div>
+                                <select id="country-code" name="country-code" data-name="Country Code" class="select-field-2 w-select country-code" required>
+                                <option value="+852">+852</option>
+                            </select>
+                            </div>
+
+                            <div style="flex-grow: 10;">
+                                <input type="tel" class="text-field phone w-input" style="border-left-style: none !important;" maxlength="256" name="mobile2" data-name="Mobile 2" placeholder="Contact number" id="Mobile-2" required>
+                            </div>
 
                         </div>
+
                         <label for="store-name" class="field-label-8">Store name</label>
                         <input type="text" class="text-input w-input" maxlength="256" name="store-name" data-name="store name" placeholder="Store name" id="contact-store-name" required="">
 
