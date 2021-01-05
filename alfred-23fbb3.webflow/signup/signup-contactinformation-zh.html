@@ -73,7 +73,8 @@
         }
         
         .phone-wrapper {
-            margin-bottom: 18px;
+            /* margin-bottom: 18px; */
+            align-items: flex-start;
         }
         
         .error {
@@ -81,6 +82,10 @@
         }
         
         .w-input.error {
+            border: 1px solid red;
+        }
+        
+        .w-select.error {
             border: 1px solid red;
         }
         
@@ -117,14 +122,21 @@
                         </div>
                         <label for="email" class="field-label-6">聯絡電郵</label><input type="email" class="text-input w-input" maxlength="256" name="email" data-name="email" placeholder="聯絡電郵" id="contact-email" required=""><label for="mobile" class="field-label-7">聯絡電話</label>
                         <div class="phone-wrapper">
-                            <select id="country-code" name="country-code" data-name="Country Code" class="select-field-2 w-select">
-            <option value="+852">+852</option>
-          </select>
-                            <input type="tel" class="text-field phone w-input" maxlength="256" name="Mobile-2" data-name="Mobile 2" placeholder="聯絡電話" id="Mobile-2" required>
+                            <div>
 
+                                <select id="country-code" name="country-code" data-name="Country Code" class="select-field-2 w-select country-code" required>
+                                <option value="+852">+852</option>
+                            </select>
+                            </div>
+
+                            <div style="flex-grow: 10;">
+
+
+                                <input type="tel" class="text-field phone w-input" style="border-left-style: none !important;" maxlength="256" name="mobile2" data-name="Mobile 2" placeholder="聯絡電話" id="Mobile-2" required>
+                            </div>
                         </div>
                         <label for="store-name" class="field-label-8">網店名稱</label>
-                        <input type="text" class="text-input w-input" maxlength="256" name="store-name" data-name="store name" placeholder="網店名稱" id="contact-store-name" required="">
+                        <input type="text" class="text-input w-input" maxlength="256" name="store_name" data-name="store name" placeholder="網店名稱" id="contact-store-name" required="">
 
                         <div class="section-6"><label for="First-name-2">網站</label>
                             <div class="optional">  選填</div>
@@ -205,7 +217,7 @@
                         required: true,
                         email: true,
                     },
-                    mobile: {
+                    mobile2: {
                         required: true,
                     },
                     store_name: {
@@ -229,7 +241,7 @@
                         required: "這是必填欄",
                         email: "請输入有效的電郵地址"
                     },
-                    mobile: {
+                    mobile2: {
                         required: "這是必填欄"
                     },
                     store_name: {
@@ -272,8 +284,41 @@
 
         $('#country-code').focusout(function(event) {
             $('.phone').css('border-color', '');
+
         });
     </script>
+
+
+    <script>
+        // if mobile2.required() !== false {
+
+        //     ('#country-code').css('border-color', 'red');
+        // }
+
+        // if (mobile2 == false) {
+
+        //     ('#country-code').css('border-color', 'red');
+        // }
+
+        function() {
+
+            if (mobile2.input.length = 0) {
+
+                ('#country-code').css('border-color', 'red');
+
+            }
+        }
+
+        // $('#Mobile-2'
+        // ).false(function(event) {
+
+        //     $('#country-code').css('border-color', 'red');
+        // });
+    </script>
+
+
+
+
     <script>
         // let d = document;
         // let firstName = d.getElementById("first-name")
